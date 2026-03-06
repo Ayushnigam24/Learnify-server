@@ -7,8 +7,10 @@ import adminRouter from './routes/admin.js';
 import Razorpay from 'razorpay';
 import cors from 'cors'
 import path from 'path'
-dotenv.config();
+import dns from 'dns'
+dns.setServers(["1.1.1.1","8.8.8.8"]);
 
+dotenv.config();
 export const instance = new Razorpay({
   key_id: process.env.RAZORPAY_KEY,
   key_secret: process.env.RAZORPAY_SECRET,
